@@ -1,0 +1,23 @@
+.memory-card {
+  margin: 35px;
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  height: 150px;
+  width: 100px;
+  background-color: aqua;
+}
+
+.card-wrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.fake-image {
+  background-color: aquamarine;
+}
+
+.information {
+  background-color: aliceblue;
+  margin-top: auto;
+}
