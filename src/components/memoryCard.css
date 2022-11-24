@@ -1,23 +1,70 @@
-.memory-card {
-  margin: 35px;
-  display: flex;
-  flex-shrink: 0;
-  flex-direction: column;
-  height: 150px;
-  width: 100px;
-  background-color: aqua;
+:root {
+  --pokedex-background: #dc0a2d;
+  --pokedex-trim: #dedede;
 }
 
 .card-wrapper {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
-.fake-image {
-  background-color: aquamarine;
+
+.memory-card {
+  margin: 35px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  flex-direction: column;
+  height: 150px;
+  width: 100px;
+  background-color: var(--pokedex-background);
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.poke-image {
+  background-color: var(--pokedex-trim);
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom-left-radius: 10px;
+  margin-top: 15px;
+  border: 2px solid black;
 }
 
 .information {
-  background-color: aliceblue;
-  margin-top: auto;
+  text-transform: capitalize;
+  margin-top: 5px;
+}
+
+.pokedex-bottom {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.rectangle {
+  margin-left: 5px;
+  margin-top: 5px;
+  background-color: #51ae5e;
+  height: 20px;
+  width: 35px;
+  border: 2px solid black;
+}
+
+.plus {
+  --b: 8px; /* the thickness*/
+  --c: #0000 90deg, #003229 0; /* the coloration */
+  width: 25px; /* the size */
+  aspect-ratio: 1/1;
+  background: conic-gradient(from 90deg at var(--b) var(--b), var(--c))
+    calc(100% + var(--b) / 2) calc(100% + var(--b) / 2) / calc(50% + var(--b))
+    calc(50% + var(--b));
+
+  display: inline-block;
+  margin: 5px 15px 5px auto;
+  vertical-align: middle;
 }

@@ -1,10 +1,10 @@
 import MemoryCard from "./MemoryCard";
-import React, { setState, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { pokemon, generateBox } from "./data";
 import randomUniqueNum from "../randomUniqueNum";
 import Counter from "./Counter";
 
-export default function CardWrapper({ numberSeed }) {
+export default function CardWrapper({ numberSeed, level }) {
   const pokecache = randomUniqueNum(numberSeed, numberSeed);
   //pokecache is an array of random numbers based on the numberseed, no repeats
 
@@ -27,7 +27,7 @@ export default function CardWrapper({ numberSeed }) {
         setHighscore(score);
       }
       setScore(0);
-      alert("NO DOUBLES");
+      alert("Reset level!");
       catchPokemon(emptyBox);
     } else {
       if (highscore <= score) {
@@ -47,7 +47,7 @@ export default function CardWrapper({ numberSeed }) {
 
   return (
     <>
-      <Counter score={score} highscore={highscore} />
+      <Counter score={score} highscore={highscore} level={level} />
       <div className="card-wrapper">
         {[...Array(Number(numberSeed))].map((_numb, index) => {
           index += 1;
